@@ -3,7 +3,7 @@ It is a Gnome extension that changes the gtk app theme, based on the accent colo
 The extension is a modification of the [Accent Color Icon Theme Changer For GNOME](https://github.com/taiwbi/gnome-accent-directories) extension, thank you `Mohammad Mahdi Tayebi` for your work.  
 This extension is included in [**BRGV-OS**](https://github.com/florintanasa/brgvos-void) Linux distribution.  
 
-|                                                      |                                                                 |
+|                   With link                          |                  Without link                                   |
 |:----------------------------------------------------:|:---------------------------------------------------------------:|
 |![Accent User Red Theme Light](./screenshots/accent_gtk_red_theme_light.png)|![Accent User Red Theme Dark](./screenshots/accent_gtk_red_theme_dark.png)|  
   
