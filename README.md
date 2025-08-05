@@ -1,9 +1,11 @@
 # Accent Gtk Theme
 It is a Gnome extension that changes the gtk app theme, based on the accent color chosen by the user in Gnome Settings, Appearance screen and by preferred color schema Light or Dark.   
 The extension is a modification of the [Accent Color Icon Theme Changer For GNOME](https://github.com/taiwbi/gnome-accent-directories) extension, thank you `Mohammad Mahdi Tayebi` for your work.  
-This extension is included in **BRGV-OS** Linux distribution.  
+This extension is included in [**BRGV-OS**](https://github.com/florintanasa/brgvos-void) Linux distribution.  
 
-![Accent User Theme](./screenshots/accent-gtk-theme.png)  
+|                                                      |                                                                 |
+|:----------------------------------------------------:|:---------------------------------------------------------------:|
+|![Accent User Red Theme Light](./screenshots/accent_gtk_red_theme_light.png)|![Accent User Red Theme Dark](./screenshots/accent_gtk_red_theme_dark.png)|  
   
 ## What is necessary ...
 BRGV-OS have all [Fluent themes](https://github.com/vinceliuice/Fluent-gtk-theme) installed in `/usr/share/themes`, thank you `Vince` for your work:
