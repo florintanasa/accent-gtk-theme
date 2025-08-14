@@ -3,12 +3,17 @@ It is a Gnome extension that changes the gtk app theme, based on the accent colo
 The extension is a modification of the [Accent Color Icon Theme Changer For GNOME](https://github.com/taiwbi/gnome-accent-directories) extension, thank you `Mohammad Mahdi Tayebi` for your work.  
 This extension is included in [**BRGV-OS**](https://github.com/florintanasa/brgvos-void) Linux distribution.  
 
-|                   With link                          |                  Without link                                   |
-|:----------------------------------------------------:|:---------------------------------------------------------------:|
-|![Accent User Red Theme Light](./screenshots/accent_gtk_red_theme_light.png)|![Accent User Red Theme Dark](./screenshots/accent_gtk_red_theme_dark.png)|  
+|                   With link                          |      Active Switch for link                        |                  Without link                                   |
+|:----------------------------------------------------:|:---------------------------------------------------:|:---------------------------------------------------------------:|
+|![Accent GTK Red Theme Light](./screenshots/accent_gtk_red_theme_light.png)|![Accent GTK Switch Link](./screenshots/accent_gtk_theme_link.png)|![Accent GTK Red Theme Dark](./screenshots/accent_gtk_red_theme_dark.png)|
+
+The Switch `Create link to gtk4 local config` create autmaticaly the link to gtk4 config for theming libadwaita in `home/user/.config/gtk-4.0/` at `Path to the themes` for `Fluent` themes and `MacTahoe` themes.
+
+> [!IMPORTANT]  
+> [**BRGV-OS**](https://github.com/florintanasa/brgvos-void) have all themes installed on `/usr/share/themes`, if you have the themes installed on `/home/<user name>/.themes` put the full path in `Path to the themes` and then press `Save` button.
   
 ## What is necessary ...
-BRGV-OS have all [Fluent themes](https://github.com/vinceliuice/Fluent-gtk-theme) installed in `/usr/share/themes`, thank you `Vince` for your work:
+[**BRGV-OS**](https://github.com/florintanasa/brgvos-void) have all [Fluent themes](https://github.com/vinceliuice/Fluent-gtk-theme) installed in `/usr/share/themes`, thank you `Vince` for your work:
 ```txt
 Fluent-round
 Fluent-round-Dark
@@ -67,7 +72,7 @@ Fluent-round-yellow-compact
 ```
 Also is nice to have installed [Accent Icons](https://extensions.gnome.org/extension/7535/accent-directories/) and [Accent user theme](https://github.com/florintanasa/brgvos-void/tree/main/accent-user-theme%40brgvos), BRGV-OS have by defaults this.
   
-In **BRGV-OS** also is instalated [Fluent icon theme](https://github.com/vinceliuice/Fluent-icon-theme):  
+In [**BRGV-OS**](https://github.com/florintanasa/brgvos-void) also is instalated [Fluent icon theme](https://github.com/vinceliuice/Fluent-icon-theme):  
   
 ```txt
 Fluent
@@ -91,6 +96,9 @@ Fluent-purple-light
 Fluent-red
 Fluent-red-dark
 Fluent-red-light
+Fluent-teal
+Fluent-teal-dark
+Fluent-teal-light
 Fluent-yellow
 Fluent-yellow-dark
 Fluent-yellow-light
