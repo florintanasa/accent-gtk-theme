@@ -17,10 +17,13 @@ The Switch `Create link to gtk4 local config` create autmaticaly the link to gtk
 
 Also is nice to have installed [Accent Icons](https://extensions.gnome.org/extension/7535/accent-directories/) and [Accent user theme](https://github.com/florintanasa/brgvos-void/tree/main/accent-user-theme%40brgvos), BRGV-OS have by defaults this.
 
-For `WhiteSur theme` is necessary to apply the pach `diff_lib-install.patch` from `patch` directory, because not have some commands, thats exist in `MacTahoe theme`:
+> [!IMPORTANT]  
+> For `WhiteSur theme` is necessary to apply the pach `diff_lib-install.patch` from `patch` directory, because not have some commands, thats exist in `MacTahoe theme`:  
+  
 ```bash
 patch lib-install.sh < diff_lib-install.patch
-```
+```  
+  
 The patch add next lines (whith +) to the `lib-install.sh` file:  
   
 ```patch
