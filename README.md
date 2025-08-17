@@ -13,96 +13,49 @@ The Switch `Create link to gtk4 local config` create autmaticaly the link to gtk
 > [**BRGV-OS**](https://github.com/florintanasa/brgvos-void) have all themes installed on `/usr/share/themes`, if you have the themes installed on `/home/<user name>/.themes` put the full path in `Path to the themes` and then press `Save` button.
   
 ## What is necessary ...
-[**BRGV-OS**](https://github.com/florintanasa/brgvos-void) have all [Fluent themes](https://github.com/vinceliuice/Fluent-gtk-theme) installed in `/usr/share/themes`, thank you `Vince` for your work:
-```txt
-Fluent-round
-Fluent-round-Dark
-Fluent-round-Dark-compact
-Fluent-round-Light
-Fluent-round-Light-compact
-Fluent-round-compact
-Fluent-round-green
-Fluent-round-green-Dark
-Fluent-round-green-Dark-compact
-Fluent-round-green-Light
-Fluent-round-green-Light-compact
-Fluent-round-green-compact
-Fluent-round-grey
-Fluent-round-grey-Dark
-Fluent-round-grey-Dark-compact
-Fluent-round-grey-Light
-Fluent-round-grey-Light-compact
-Fluent-round-grey-compact
-Fluent-round-orange
-Fluent-round-orange-Dark
-Fluent-round-orange-Dark-compact
-Fluent-round-orange-Light
-Fluent-round-orange-Light-compact
-Fluent-round-orange-compact
-Fluent-round-pink
-Fluent-round-pink-Dark
-Fluent-round-pink-Dark-compact
-Fluent-round-pink-Light
-Fluent-round-pink-Light-compact
-Fluent-round-pink-compact
-Fluent-round-purple
-Fluent-round-purple-Dark
-Fluent-round-purple-Dark-compact
-Fluent-round-purple-Light
-Fluent-round-purple-Light-compact
-Fluent-round-purple-compact
-Fluent-round-red
-Fluent-round-red-Dark
-Fluent-round-red-Dark-compact
-Fluent-round-red-Light
-Fluent-round-red-Light-compact
-Fluent-round-red-compact
-Fluent-round-teal
-Fluent-round-teal-Dark
-Fluent-round-teal-Dark-compact
-Fluent-round-teal-Light
-Fluent-round-teal-Light-compact
-Fluent-round-teal-compact
-Fluent-round-yellow
-Fluent-round-yellow-Dark
-Fluent-round-yellow-Dark-compact
-Fluent-round-yellow-Light
-Fluent-round-yellow-Light-compact
-Fluent-round-yellow-compact
-```
+[**BRGV-OS**](https://github.com/florintanasa/brgvos-void) have all [Fluent themes](https://github.com/vinceliuice/Fluent-gtk-theme), [MacTahoe themes](https://github.com/vinceliuice/MacTahoe-gtk-theme) and [WhiteSur themes](https://github.com/vinceliuice/WhiteSur-gtk-theme) installed in `/usr/share/themes`, thank you `Vince` for your work.
+
 Also is nice to have installed [Accent Icons](https://extensions.gnome.org/extension/7535/accent-directories/) and [Accent user theme](https://github.com/florintanasa/brgvos-void/tree/main/accent-user-theme%40brgvos), BRGV-OS have by defaults this.
+
+For `WhiteSur theme` is necessary to apply the pach `diff_lib-install.patch` from `patch` directory, because not have some commands, thats exist in `MacTahoe theme`:
+```bash
+patch lib-install.sh < diff_lib-install.patch
+```
+The patch add next lines (whith +) to the `lib-install.sh` file:  
   
-In [**BRGV-OS**](https://github.com/florintanasa/brgvos-void) also is instalated [Fluent icon theme](https://github.com/vinceliuice/Fluent-icon-theme):  
+```patch
+--- /home/florin/git/WhiteSur-gtk-theme/libs/orig/lib-install.sh
++++ /home/florin/git/WhiteSur-gtk-theme/libs/lib-install.sh
+@@ -457,6 +457,12 @@
+   echo '@import url("resource:///org/gnome/theme/gtk-dark.css");' >                           "${TARGET_DIR}/gtk-3.0/gtk-dark.css"
+   glib-compile-resources --sourcedir="${TMP_DIR_T}" --target="${TARGET_DIR}/gtk-3.0/gtk.gresource" "${THEME_SRC_DIR}/main/gtk-3.0/gtk.gresource.xml"
+ 
++  cp -r "${THEME_SRC_DIR}/assets/gtk/common-assets/assets"                                    "${TARGET_DIR}/gtk-3.0"
++  cp -r "${THEME_SRC_DIR}/assets/gtk/scalable"                                                "${TARGET_DIR}/gtk-3.0/assets"
++  cp -r "${THEME_SRC_DIR}/assets/gtk/windows-assets/titlebutton${alt}${scheme}"               "${TARGET_DIR}/gtk-3.0/windows-assets"
++  sassc ${SASSC_OPT} "${THEME_SRC_DIR}/main/gtk-3.0/gtk${color}.scss"                         "${TARGET_DIR}/gtk-3.0/gtk.css"
++  sassc ${SASSC_OPT} "${THEME_SRC_DIR}/main/gtk-3.0/gtk-Dark.scss"                            "${TARGET_DIR}/gtk-3.0/gtk-dark.css"
++
+   #--------------------GTK-4.0--------------------#
+ 
+   mkdir -p                                                                                    "${TMP_DIR_F}"
+@@ -471,6 +477,12 @@
+   echo '@import url("resource:///org/gnome/theme/gtk.css");' >                                "${TARGET_DIR}/gtk-4.0/gtk.css"
+   echo '@import url("resource:///org/gnome/theme/gtk-dark.css");' >                           "${TARGET_DIR}/gtk-4.0/gtk-dark.css"
+   glib-compile-resources --sourcedir="${TMP_DIR_F}" --target="${TARGET_DIR}/gtk-4.0/gtk.gresource" "${THEME_SRC_DIR}/main/gtk-4.0/gtk.gresource.xml"
++
++  cp -r "${THEME_SRC_DIR}/assets/gtk/common-assets/assets"                                    "${TARGET_DIR}/gtk-4.0"
++  cp -r "${THEME_SRC_DIR}/assets/gtk/scalable"                                                "${TARGET_DIR}/gtk-4.0/assets"
++  cp -r "${THEME_SRC_DIR}/assets/gtk/windows-assets/titlebutton${alt}${scheme}"               "${TARGET_DIR}/gtk-4.0/windows-assets"
++  sassc ${SASSC_OPT} "${THEME_SRC_DIR}/main/gtk-4.0/gtk${color}.scss"                         "${TARGET_DIR}/gtk-4.0/gtk.css"
++  sassc ${SASSC_OPT} "${THEME_SRC_DIR}/main/gtk-4.0/gtk-Dark.scss"                            "${TARGET_DIR}/gtk-4.0/gtk-dark.css"
+ 
+   #----------------Cinnamon-----------------#
+```
+After that we can build or install the theme.  
   
-```txt
-Fluent
-Fluent-dark
-Fluent-green
-Fluent-green-dark
-Fluent-green-light
-Fluent-grey
-Fluent-grey-dark
-Fluent-grey-light
-Fluent-light
-Fluent-orange
-Fluent-orange-dark
-Fluent-orange-light
-Fluent-pink
-Fluent-pink-dark
-Fluent-pink-light
-Fluent-purple
-Fluent-purple-dark
-Fluent-purple-light
-Fluent-red
-Fluent-red-dark
-Fluent-red-light
-Fluent-teal
-Fluent-teal-dark
-Fluent-teal-light
-Fluent-yellow
-Fluent-yellow-dark
-Fluent-yellow-light
-```  
+In [**BRGV-OS**](https://github.com/florintanasa/brgvos-void) also is instalated [Fluent icon theme](https://github.com/vinceliuice/Fluent-icon-theme), [MacTahoe icons theme](https://github.com/vinceliuice/MacTahoe-icon-theme) and [WhiteSur icons theme](https://github.com/vinceliuice/WhiteSur-icon-theme).  
+  
 
 ## Warning 
 
