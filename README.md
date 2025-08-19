@@ -7,7 +7,8 @@ This extension is included in [**BRGV-OS**](https://github.com/florintanasa/brgv
 |:----------------------------------------------------:|:---------------------------------------------------:|:---------------------------------------------------------------:|
 |![Accent GTK Red Theme Light](./screenshots/accent_gtk_red_theme_light.png)|![Accent GTK Switch Link](./screenshots/accent_gtk_theme_link.png)|![Accent GTK Red Theme Dark](./screenshots/accent_gtk_red_theme_dark.png)|
 
-The Switch `Create link to gtk4 local config` create autmaticaly the link to gtk4 config for theming libadwaita in `home/user/.config/gtk-4.0/` at `Path to the themes` for `Fluent` themes and `MacTahoe` themes.
+The `Create link to gtk4 local config` switch will copy the necessary files and directories from the theme location to `home/user/.config/gtk-4.0/` for libadwaita to work correctly, tested for the `Fluent` theme, the `MacTahoe` theme and the `WhiteSur` theme.
+I used initially symbolic links to these but they didn't work quite right. I don't know why, in special flatpak applications.
 
 > [!IMPORTANT]  
 > [**BRGV-OS**](https://github.com/florintanasa/brgvos-void) have all themes installed on `/usr/share/themes`, if you have the themes installed on `/home/<user name>/.themes` put the full path in `Path to the themes` and then press `Save` button.
