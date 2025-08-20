@@ -60,7 +60,25 @@ After that we can build or install the theme.
   
 In [**BRGV-OS**](https://github.com/florintanasa/brgvos-void) also is instalated [Fluent icon theme](https://github.com/vinceliuice/Fluent-icon-theme), [MacTahoe icons theme](https://github.com/vinceliuice/MacTahoe-icon-theme) and [WhiteSur icons theme](https://github.com/vinceliuice/WhiteSur-icon-theme).  
   
-
+> [!IMPORTANT]
+> Fix for Flatpak, run like user the next commands:
+> ```bash
+>   flatpak override --user --filesystem=xdg-config/gtk-3.0
+>   flatpak override --user --filesystem=xdg-config/gtk-4.0
+>```
+> or if you prefer to do for all system:
+> ```bash
+>   sudo flatpak override --filesystem=xdg-config/gtk-3.0
+>   sudo flatpak override --filesystem=xdg-config/gtk-4.0
+>```
+> for revert:
+> ```bash
+>   flatpak override --user --reset
+>```
+> or
+> ```bash
+>   sudo flatpak override --reset
+>```
 ## Warning 
 
 The open-source software included in **BRGV-OS** is distributed in the hope that it will be useful, but **WITHOUT ANY WARRANTY**.
