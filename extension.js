@@ -18,6 +18,7 @@
 import { Extension } from 'resource:///org/gnome/shell/extensions/extension.js';
 import Gio from 'gi://Gio';
 import GLib from 'gi://GLib';
+import * as Main from 'resource:///org/gnome/shell/ui/main.js';
 
 export default class AccentColorGtkThemeExtension extends Extension {
     _settings;
@@ -95,13 +96,17 @@ export default class AccentColorGtkThemeExtension extends Extension {
         // Clear the gtkThemes array
         this.gtkThemesDark = [];
         this.gtkThemesLight = [];
-        // Optionally reset to default gtk theme - Adwaita
-        this._setGtkTheme("Adwaita");
+        // Locking pauses the extension without changing the desktop theme.
+        if (!Main.sessionMode.isLocked) {
+            this._setGtkTheme("Adwaita");
+        }
         // Null out settings
         this._settings = null;
         this._preferences = null;
         // Delete files and directories if exist
-        this._delFilesDirsLocalGtk4();
+        if (!Main.sessionMode.isLocked) {
+            this._delFilesDirsLocalGtk4();
+        }
     }
 
     // Next metod is called when extension is enabled, color accent, edit a new path to the themes, or the switch for set link gtk4 local is changed
